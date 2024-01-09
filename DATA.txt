@@ -1,0 +1,6 @@
+firebase tools installation  --  npm install -g firebase-tools  
+
+Material Ui for all the icons (https://mui.com/material-ui/material-icons/)  -- npm install @mui/material @emotion/react @emotion/styled
+       npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
+
