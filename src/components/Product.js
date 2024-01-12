@@ -1,6 +1,24 @@
 import React from "react";
+import { useStateValue } from "./StateProvider";
 
-function Product({ title, image, price, rating }) {
+function Product({ id, title, image, price, rating }) {
+  const [{ cart }, dispatch] = useStateValue();
+
+  // console.log("HIIIIIIIIIIIII", cart);
+  const addToCart = () => {
+    // dispatch item to data layer
+    dispatch({
+      type: "ADD_TO_CART",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-end m-[10px] 
@@ -36,7 +54,10 @@ function Product({ title, image, price, rating }) {
         alt="Products images"
       />
 
-      <button className="bg-[#f0c14b] border-[1px] border-solid mt-[10px] text-[#111]">
+      <button
+        className="bg-[#f0c14b] border-[1px] border-solid mt-[10px] text-[#111]"
+        onClick={addToCart}
+      >
         Add to Cart
       </button>
     </div>

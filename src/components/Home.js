@@ -30,7 +30,7 @@ function Home() {
           <Product
             id="01"
             title="Redmi Note 13 5G"
-            price="8499"
+            price={8499.99}
             image={
               "https://m.media-amazon.com/images/G/31/img21/Wireless/Madhav/JanART24/Teaser1/r2/JAN_ART_9CARD_._CB585749423_.png"
             }
@@ -40,7 +40,7 @@ function Home() {
           <Product
             id="02"
             title="TCL smart Tvs"
-            price="16,999"
+            price={16999}
             image={
               "https://m.media-amazon.com/images/G/31/Manjula/JanART24Newlaunches/pngfile/07._CB585846284_.png"
             }
@@ -55,7 +55,7 @@ function Home() {
           <Product
             id="03"
             title="NAUTICA Modern Wall Clock"
-            price="999"
+            price={999}
             image={
               "https://m.media-amazon.com/images/G/31/Manjula/JanART24Newlaunches/pngfile/1._CB585846284_.png"
             }
@@ -64,7 +64,7 @@ function Home() {
           <Product
             id="04"
             title="BSB Home Microfiber Bedsheets"
-            price="399"
+            price={399}
             image={
               "https://m.media-amazon.com/images/G/31/Manjula/JanART24Newlaunches/pngfile/03._CB585846489_.png"
             }
@@ -73,7 +73,7 @@ function Home() {
           <Product
             id="05"
             title="BenQ Smart Projector"
-            price="6,999"
+            price={6999}
             image={
               "https://m.media-amazon.com/images/G/31/Manjula/JanART24Newlaunches/pngfile/06._CB585846284_.png"
             }
@@ -88,7 +88,7 @@ function Home() {
           <Product
             id="06"
             title="Kuber Bamboo Basket With Lid"
-            price="1499"
+            price={1499}
             image={
               "https://m.media-amazon.com/images/G/31/Manjula/JanART24Newlaunches/pngfile/02._CB585846284_.png"
             }

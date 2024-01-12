@@ -4,3 +4,12 @@ Material Ui for all the icons (https://mui.com/material-ui/material-icons/)  -- 
        npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 
 
+react router=---  npm install react-router-dom@5.2.0
+  not using latest one bcz https://stackoverflow.com/questions/71582086/export-switch-was-not-found-in-react-router-dom
+
+npm i react-currency-format
+
+
+  
+
+  

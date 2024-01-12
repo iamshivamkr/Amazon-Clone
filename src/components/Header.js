@@ -1,22 +1,29 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ cart }, dispatch] = useStateValue();
   return (
     <div
       className="
       h-[60px] flex items-center bg-[#131921] sticky top-[0] z-100 
     "
       //header
-      // style={{ zIndex: 100 }}
     >
-      <img
-        className="w-[100px] object-contain mx-[20px] my-[0] mt-[18px]"
-        //header__logo
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        alt="Amazon"
-      />
+      <Link to="/">
+        <img
+          className="w-[100px] object-contain mx-[20px] my-[0] mt-[18px]"
+          //header__logo
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt="Amazon"
+          onClick={() => {
+            console.log("Home Clicked!!!!!!!!!");
+          }}
+        />
+      </Link>
       <div
         className="flex flex-[1] items-center rounded-[24px]"
         // header__search
@@ -93,18 +100,20 @@ function Header() {
             Prime{" "}
           </span>
         </div>
-        <div
-          className="flex items-center text-[white]"
-          // header__optionBasket
-        >
-          <ShoppingBasketIcon />
-          <span
-            className="text-[13px] font-extrabold ml-[10px] mr-[10px]"
-            //header__optionLineTwo && header__basketCount
+        <Link to="/checkout">
+          <div
+            className="flex items-center text-[white]"
+            // header__optionBasket
           >
-            0
-          </span>
-        </div>
+            <ShoppingBasketIcon />
+            <span
+              className="text-[13px] font-extrabold ml-[10px] mr-[10px]"
+              //header__optionLineTwo && header__basketCount
+            >
+              {cart?.length}
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );
