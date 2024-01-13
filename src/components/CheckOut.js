@@ -4,7 +4,7 @@ import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 
 function CheckOut() {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
   return (
     <div
       className="flex p-[20px] bg-[white] h-max "
@@ -26,6 +26,7 @@ function CheckOut() {
           }}
         />
         <div>
+          <h3 className="mt-[15px]"> Hello, {user?.email} </h3>
           <h2
             className="mr-[10px] p-[10px] border-b-[1px] border-solid border-gray-300  "
             //   checkout__title

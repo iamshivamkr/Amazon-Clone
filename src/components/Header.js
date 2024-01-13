@@ -3,9 +3,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "../firebase";
 
 function Header() {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
+
+  const handleAuthenticaton = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <div
       className="
@@ -43,25 +50,26 @@ function Header() {
         className="flex justify-evenly"
         // header__nav
       >
-        <div
-          className="flex flex-col ml-[10px] mr-[10px] text-[white]"
-          // header__option
-        >
-          <span
-            className="text-[10px]"
-            // header__optionLineOne
+        <Link to={!user && "/login"}>
+          <div
+            onClick={handleAuthenticaton}
+            className="flex flex-col ml-[10px] mr-[10px] text-[white]"
+            // header__option
           >
-            {" "}
-            Hello User{" "}
-          </span>
-          <span
-            className="text-[13px] font-extrabold "
-            // header__optionLineTwo
-          >
-            {" "}
-            Sign In{" "}
-          </span>
-        </div>
+            <span
+              className="text-[10px]"
+              // header__optionLineOne
+            >
+              Hello {!user ? "Guest" : user.email}
+            </span>
+            <span
+              className="text-[13px] font-extrabold "
+              // header__optionLineTwo
+            >
+              {user ? "Sign Out" : "Sign In"}
+            </span>
+          </div>
+        </Link>
         <div
           className="flex flex-col ml-[10px] mr-[10px] text-[white]"
           // header__option
