@@ -70,25 +70,28 @@ function Header() {
             </span>
           </div>
         </Link>
-        <div
-          className="flex flex-col ml-[10px] mr-[10px] text-[white]"
-          // header__option
-        >
-          <span
-            className="text-[10px]"
-            // header__optionLineOne
+
+        <Link to="/orders">
+          <div
+            onClick={handleAuthenticaton}
+            className="flex flex-col ml-[10px] mr-[10px] text-[white]"
+            // header__option
           >
-            {" "}
-            Returns{" "}
-          </span>
-          <span
-            className="text-[13px] font-extrabold "
-            // header__optionLineTwo
-          >
-            {" "}
-            Orders{" "}
-          </span>
-        </div>
+            <span
+              className="text-[10px]"
+              // header__optionLineOne
+            >
+              Returns
+            </span>
+            <span
+              className="text-[13px] font-extrabold "
+              // header__optionLineTwo
+            >
+              & Orders
+            </span>
+          </div>
+        </Link>
+
         <div
           className="flex flex-col ml-[10px] mr-[10px] text-[white]"
           // header__option

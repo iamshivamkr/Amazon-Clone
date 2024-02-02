@@ -5,7 +5,7 @@ import { useStateValue } from "./StateProvider";
 import { getCartTotal } from "./reducer";
 
 function Subtotal() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [{ cart }, dispatch] = useStateValue();
   return (
     <div
@@ -35,7 +35,7 @@ function Subtotal() {
       />
       <button
         className="bg-[#f0c14b] rounded-[2px] w-full h-[30px] border-[1px] border-solid mt-[10px] text-[#111]"
-        onClick={(e) => history.push("/payment")}
+        onClick={(e) => navigate("/payment")}
       >
         Proceed to Checkout
       </button>
